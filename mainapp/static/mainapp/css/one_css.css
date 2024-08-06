@@ -1,0 +1,27 @@
+.block-home-banner {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 6.3158rem);
+    background-image: url(../img/fon_stoun.png);
+    background-image: url(../img/fon_stoun.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.bd-footer a {
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+
+#center {
+    background-size: cover;
+    background-image: url(../img/black_fon.png);
+}
+
+#text_center {
+    position: absolute;
+    left:100px;
+    top:150px;
+}
