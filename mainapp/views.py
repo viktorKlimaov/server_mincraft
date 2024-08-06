@@ -9,4 +9,8 @@ def index(request):
         email = request.POST.get('email')
         print(f'{name}\n{email}')
 
-    return render(request, 'main/index.html')
+    return render(request, 'mainapp/index.html')
+
+
+def my_main(request):
+    return render(request, 'mainapp/my_main.html')
