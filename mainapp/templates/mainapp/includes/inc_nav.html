@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-black text-white" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'mainapp:my_main' %}">Главная</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                       href="{% url 'mainapp:subject_list' %}">Магазин</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mainapp:create_product' %}">Создать предмет (помощь)</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="{% url 'mainapp:index' %}">Проверочная страница (форум)</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Поиск</button>
+            </form>
+        </div>
+    </div>
+</nav>
