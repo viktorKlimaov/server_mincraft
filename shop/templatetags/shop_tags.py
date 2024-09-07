@@ -4,7 +4,7 @@ register = template.Library()
 
 # Создание фильтра
 @register.filter()
-def blog_media(path):
+def shop_media(path):
     if path:
         return f'/media/{path}'
     return '#'

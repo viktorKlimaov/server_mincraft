@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from shop.apps import ShopConfig
-from shop.views import (ProductCreateView,SubjectListView, SubjectUpdateView)
+from shop.views import (SubjectListView, SubjectUpdateView, CategoryDetailView)
 
 app_name = ShopConfig.name
 
@@ -11,10 +11,10 @@ app_name = ShopConfig.name
 urlpatterns = [
     # path('product/delete/', ProductDeleteView.as_view(), name='delete_product'),
     path('subject/', SubjectListView.as_view(), name='subject_list'),
-    path('subject/update/<int:pk>/', SubjectListView.as_view(), name='subject_update'),
+    path('category/<int:pk>/', CategoryDetailView.as_view(), name='category_detail'),
+    path('category/update/<int:pk>/', SubjectUpdateView.as_view(), name='subject_update'),
 
-
-    # path('subject/<int:category>/', SubjectListView.as_view(), name='subject'),
+    # path('subject/<category>/', SubjectListView.as_view(), name='subject_list'),
 
 ]
 

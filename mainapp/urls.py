@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from mainapp.apps import MainappConfig
-from mainapp.views import (index, MyMainListView,  ProductCreateView,)
+from mainapp.views import (index, MyMainListView, ProductCreateView)
 
 app_name = MainappConfig.name
 

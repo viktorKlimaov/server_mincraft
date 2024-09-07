@@ -38,13 +38,6 @@ class ProductCreateView(CreateView):
     success_url = reverse_lazy('mainapp:my_main')
 
 
-# class ProductDeleteView(DeleteView):
-#     """
-#     Контроллер для удаления товара
-#     """
-#     model = Product
-#     success_url = reverse_lazy('mainapp:my_main')
-
 
 
 

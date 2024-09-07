@@ -6,13 +6,13 @@ from django.db import models
 
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='название продукта')
-
+    slug = models.CharField( max_length=100, verbose_name='slug', blank=True, null=True,)
     description = models.TextField(max_length=150, verbose_name='описание продукта')
 
     image = models.ImageField(upload_to='photo/product', blank=True, null=True,
                               verbose_name='Фото')
 
-    category_id = models.ForeignKey(to='Category', on_delete=models.SET_NULL,
+    category = models.ForeignKey(to='Category', on_delete=models.SET_NULL,
                                     verbose_name='категория', blank=True, null=True)
 
     price = models.IntegerField(verbose_name='стоимость продукта')

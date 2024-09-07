@@ -1,0 +1,56 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+{% load static %}
+{% load shop_tags %}
+<div class="container">
+    <div class="container text-center py-4">
+        <h1 class="display-3">Магазин предметов</h1>
+        <text class="h3"><br>
+        </text>
+    </div>
+
+    <div class="row text-center">
+        {% for object in category %}
+        <div class="col">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ object.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$ {{ object.slug }}</h1>
+                    <img src="{{ object.image | shop_media }}" class="img-thumbnail">
+
+                    <p>{{ object.description | truncatechars:100}}</p>
+                    <a class="p-2 btn btn-outline-primary" href="{% url 'shop:subject_update' object.pk %}">Обновить</a>
+                    <a class="p-2 btn btn-outline-primary" href="{% url 'shop:category_detail' object.pk %}">Детали</a>
+                    <a class="p-2 btn btn-outline-primary" href="">Выбрать</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div>
+    <div class="row text-center">
+        {% for object in Subjects %}
+        <div class="col">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ object.name }} {{ object.slag }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$ {{ object.price }}</h1>
+                    <img src="{{ object.image | shop_media }}" class="img-thumbnail">
+
+                    <p>{{ object.description | truncatechars:100}}</p>
+
+                    <a class="p-2 btn btn-outline-primary"
+                       href="">Детали</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
