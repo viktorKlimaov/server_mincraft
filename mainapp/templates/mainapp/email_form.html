@@ -1,0 +1,20 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+{% load static %}
+ <div id="center">
+        <div class="container py-4" data-bs-theme="dark">
+            <div class="row ">
+                <div class="col-4">
+                    <div class="card">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

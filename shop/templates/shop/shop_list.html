@@ -10,6 +10,8 @@
     </div>
 
     <div class="row text-center">
+    <a class="p-2 btn btn-outline-primary mb-4" href="{% url 'shop:subject_list' %}">Весь каталог</a>
+
         {% for object in category %}
         <div class="col">
             <div class="card mb-4 box-shadow">
@@ -23,7 +25,7 @@
                     <p>{{ object.description | truncatechars:100}}</p>
                     <a class="p-2 btn btn-outline-primary" href="{% url 'shop:subject_update' object.pk %}">Обновить</a>
                     <a class="p-2 btn btn-outline-primary" href="{% url 'shop:category_detail' object.pk %}">Детали</a>
-                    <a class="p-2 btn btn-outline-primary" href="">Выбрать</a>
+                    <a class="p-2 btn btn-outline-primary" href="{% url 'shop:subject' object.pk %}">Выбрать</a>
                 </div>
             </div>
         </div>
@@ -44,6 +46,7 @@
                     <img src="{{ object.image | shop_media }}" class="img-thumbnail">
 
                     <p>{{ object.description | truncatechars:100}}</p>
+                    <a class="p-2 btn btn-outline-primary" href="{% url 'shop:product_update' object.pk %}">Обновить</a>
 
                     <a class="p-2 btn btn-outline-primary"
                        href="">Детали</a>

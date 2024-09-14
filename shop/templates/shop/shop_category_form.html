@@ -1,20 +1,36 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
 {% load static %}
- <div id="center">
-        <div class="container py-4" data-bs-theme="dark">
+<div id="center">
+    <div class="container py-4" data-bs-theme="dark">
+        <form method="post" enctype="multipart/form-data">
             <div class="row ">
+
                 <div class="col-4">
                     <div class="card">
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <button type="submit" class="btn btn-primary">Отправить</button>
-                        </form>
+
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+
                     </div>
                 </div>
+
+<!--                <div class="col-5">-->
+<!--                    <div class="card">-->
+<!--                        <h1 class="card-title pricing-card-title">Продукты</h1>-->
+<!--                        {{ formset.management_form }}-->
+<!--                        {% for form in formset.forms %}-->
+<!--                            {{ form.as_p }}-->
+<!--                        {% endfor %}-->
+<!--                        <button type="submit" class="btn btn-primary">Отправить</button>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+
             </div>
-        </div>
+        </form>
     </div>
+</div>
 
 {% endblock %}

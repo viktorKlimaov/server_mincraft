@@ -12,7 +12,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='photo/product', blank=True, null=True,
                               verbose_name='Фото')
 
-    category = models.ForeignKey(to='Category', on_delete=models.SET_NULL,
+    category = models.ForeignKey(to='Category', on_delete=models.CASCADE,
                                     verbose_name='категория', blank=True, null=True)
 
     price = models.IntegerField(verbose_name='стоимость продукта')
@@ -31,12 +31,10 @@ class Product(models.Model):
     # def get_absolute_url(self):
     #     return reverse('mainapp:subject_list', args=[self.name])
 
-
-
-
+###########################################
 
 class Category(models.Model):
-    name = models.CharField(max_length=150, verbose_name='название катигории')
+    name = models.CharField(max_length=150, verbose_name='название катигории', unique=True)
     slug = models.CharField( max_length=100, verbose_name='slug', blank=True, null=True,)
     description = models.TextField(max_length=150, verbose_name='описание катигории')
 
@@ -50,6 +48,14 @@ class Category(models.Model):
     def __str__(self):
         # Строковое отображение объекта
         return f'{self.name}'
+
+##########################################
+
+class EmailPost(models.Model):
+    name = models.CharField(max_length=25)
+    email = models.EmailField(unique=True)
+    to = models.EmailField()
+    comments = models.CharField(max_length=300)
 
 
 
